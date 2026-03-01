@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campaign The Silent Yes Website</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+
+
+<style>
+:root{--bg:#0f0f0f;--text:#eaeaea;--muted:#9b9b9b;--toxic:#66ff00; ;--accent:#ff4d00}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+body{background:var(--bg);color:var(--text)}
+nav{position:fixed;top:0;width:100%;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,15,.8);backdrop-filter:blur(10px);z-index:100}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{color:var(--text);text-decoration:none;position:relative}
+nav a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:.3s}
+nav a:hover::after{width:100%}
+section{padding:120px 80px}
+
+
+
+/* HERO */
+.hero{height:85vh;display:flex;align-items:center;padding-top:120px;background:linear-gradient(120deg,#111,#1a1a1a)}
+.hero h1{font-size:64px;font-weight:800;margin-bottom:1px}
+.hero p{color:var(--muted);margin-bottom:30px}
+.btn{padding:18px 34px;background:var(--accent);border:none;border-radius:20px;color:#fff;font-weight:600;font-size:x-large;cursor:pointer}
+.btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(255,77,0,.4)}
+.btnctus{padding:12px 24px;background:var(--accent);text-decoration:none;border:none;border-radius:20px;color:#fff;font-weight:600;text-decoration-line:none;font-size:19px;cursor:pointer;transition:.3s;position:relative}
+.btnctus a{text-decoration:none;color:#fff}
+.btnctus:hover{transform:translateY(-2px);box-shadow:0 0 15px rgba(255,77,0,.4);outline:1px solid rgba(255,77,0,.5);outline-offset:3px}
+.news-item{font-size:20px;margin-bottom:40px}
+
+.video-box{display:flex;justify-content:center}
+video{width:70%;border-radius:20px;box-shadow:0 0 40px rgba(255,77,0,.25)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.card{position:relative;overflow:hidden;border-radius:20px}
+.card img{width:100%;transition:.4s}
+.card:hover img{transform:scale(1.1)}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:.4s}
+.card:hover .overlay{opacity:1}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about img{width:100%;border-radius:20px}
+
+.slogan{background:var(--accent);color:#fff;text-align:center;font-size:48px;font-weight:800;padding:100px 40px}
+/* news */
+.news {
+  background:rgb(0, 0, 0);
+  padding:60px;
+}
+/* TEAM */
+.leader{text-align:center;margin-bottom:80px}
+.leader img{width:260px;height:260px;border-radius:50%;box-shadow:0 30px 60px rgba(255,77,0,.35)}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}
+.member{text-align:center}
+.member img{width:160px;height:160px;border-radius:50%;margin-bottom:15px}
+
+footer{padding:60px;background:rgb(255, 253, 253);display:flex;justify-content:space-between;align-items:center}
+footer i{margin-left:20px;font-size:22px;cursor:pointer;transition:.3s}
+footer i:hover{color:var(--accent);transform:scale(1.2)}
+footer img{width:24px;height:24px}
+footer p {color:black;font-weight:600}
+.toxic{
+  color: var(--toxic);
+  letter-spacing: 4px;
+  text-shadow: 0 0 12px rgba(102,255,0,.5);
+}
+nav li.btnctus {
+  border-radius: 50px;
+}
+@media(max-width:768px){
+section{padding:100px 30px}
+.hero h1{font-size:42px}
+.about{grid-template-columns:1fr}
+video{width:100%}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>THE SILENT YES</h2>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#campaign">Campaign</a></li>
+<li><a href="#team">Team</a></li>
+<li><a href="#contact">Join Us</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+<div>
+<h1 class="reveal">A SILENT NOD<br>WHEN AGREEMENT TURNS <span class="toxic">TOXIC</span></h1>
+<p class=" fade-up">Own your voice — don’t agree on autopilot.</p>
+<button class="btnctus" ><a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fforms.gle%2F5U5fckjDorUA53tU7%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExSGNDTEZvUkh5NzIwQUozOHNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4FxbBWClO2dq1TKZnCMxDSlUkGGK-POHWRb2fsfyM7EbJrLWjKEeJl-599hw_aem_drZwuoE_8AZAb3vvnYY6AQ&h=AT4bjxeFvxJdk6ktg6yqPSwa9Yo_v8gPpsdT9E03roCLAjgq3PE75fFHnlwIHBqt5DrABOS_qmgmGfaXH91S_jed73BnGHpr7YucJ4vkZ2Y4ltv4EpxvXl4NZvWyd_I">Contact Us</button></a> 
+</div>
+</section>
+
+<section class="news">
+<div class="news-item">• Campaign đạt hơn 1 triệu lượt tiếp cận</div>
+<div class="news-item">• Định hình xu hướng truyền thông 2026</div>
+<div class="news-item">• Kết nối thương hiệu & cảm xúc</div>
+</section>
+
+<section id="campaign">
+<div>
+<h2 style="margin-bottom:60px">Our message</h2>
+</div>
+<div class="video-box">
+<video controls src="./imgexpj/7529272624914.mp4"></video>
+</div>
+</section>
+
+<section>
+<div class="grid">
+<div class="card"><img src="https://picsum.photos/500/600?1"><div class="overlay">Poster 01</div></div>
+<div class="card"><img src="https://picsum.photos/500/600?2"><div class="overlay">Poster 02</div></div>
+<div class="card"><img src="https://picsum.photos/500/600?3"><div class="overlay">Poster 03</div></div>
+</div>
+</section>
+
+<section id="about" class="about">
+<div>
+<h2>About Us</h2>
+<p>Chiến dịch kết hợp công nghệ, thiết kế và cảm xúc.</p>
+</div>
+<img src="https://picsum.photos/600/400">
+</section>
+
+<div class="slogan">WHEN YOU DON'T SAY NO,YOU ARE SAYING YES.</div>
+
+<section id="team">
+<h2 style="margin-bottom:60px">Our Team</h2>
+<div class="leader">
+<img src="./imgexpj/486518594_1402237934553592_7391293349880711030_n.jpg">
+<h3>Peter</h3>
+<p>  Leader - Web developer</p>
+</div>
+
+<div class="team-grid">
+<div class="member"><img src="./imgexpj/539260171_788951203657177_3507784987365245177_n.jpg"><h4>Julie độc ác</h4><p>RẮN ĐỘC + không làm gì làm mẹ leader  </p></div>
+<div class="member"><a href=https://www.facebook.com/tr.ng.thao.nguyen.806279><img src="./imgexpj/453178253_471506465671661_2781666950760530985_n.png"></a><h4>Ruby</h4><p>RẮN CHÚA làm cảnh + làm mẹ leader</p></div>
+<div class="member"><img src="./imgexpj/528800165_629615880201937_1096989600507943036_n.jpg"><h4>Amy</h4><p>XÀM ba láp ko làm</p></div>
+<div class="member"><img src="./imgexpj/627134273_122192880650548234_3907161863110475641_n.jpg"><h4>Nina</h4><p>Content</p></div>
+<div class="member"><img src="./imgexpj/453178253_471506465671661_2781666950760530985_n.png"><h4>Leo</h4><p>Survey</p></div>
+
+</div>
+</section>
+
+<footer id="contact">
+<p>© 2026 Peter</p>
+<div id="social">
+<ol class="fab fa-facebook"><a href="https://www.facebook.com/groups/881348834381077"><img src="./imgexpj/download (1).png"></a></ol>
+<ol class="fab fa-instagram"></ol>
+<ol class="fab fa-linkedin"></ol>
+</div>
+</footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+/* HERO */
+gsap.from(".reveal",{y:80,opacity:0,duration:1.2,ease:"power4.out"});
+gsap.from(".fade-up",{y:50,opacity:0,delay:.3,stagger:.0});
+
+/* NEWS */
+gsap.from(".news-item",{
+  scrollTrigger:{trigger:".news",start:"top 70%"},
+  y:60,opacity:0,stagger:.3
+});
+
+/* VIDEO */
+gsap.to("video",{
+  scrollTrigger:{trigger:"video",start:"top 80%",scrub:true},
+  y:-40
+});
+
+/* POSTER */
+gsap.from(".card",{
+  scrollTrigger:{trigger:".grid",start:"top 80%"},
+  scale:.9,opacity:0,stagger:.2
+});
+
+/* ABOUT */
+gsap.from(".about div",{
+  scrollTrigger:{trigger:"#about",start:"top 75%"},
+  x:-60,opacity:0
+});
+gsap.from(".about img",{
+  scrollTrigger:{trigger:"#about",start:"top 75%"},
+  x:60,opacity:0
+});
+
+/* SLOGAN */
+gsap.from(".slogan",{
+  scrollTrigger:{trigger:".slogan",start:"top 80%"},
+  scale:.9,opacity:0
+});
+
+/* TEAM */
+gsap.from(".leader",{
+  scrollTrigger:{trigger:"#team",start:"top 80%"},
+  scale:.9,opacity:0
+});
+gsap.from(".team-grid .member",{
+  scrollTrigger:{trigger:"#team",start:"top 75%"},
+  y:60,opacity:0,stagger:.2
+});
+
+/* =========================
+   NAVBAR GSAP SMOOTH SCROLL
+   ========================= */
+document.querySelectorAll("nav a[href^='#']").forEach(link=>{
+  link.addEventListener("click",e=>{
+    e.preventDefault();
+    const target=document.querySelector(link.getAttribute("href"));
+    if(!target) return;
+
+    gsap.to(window,{
+      duration:1.2,
+      scrollTo:{
+        y:target,
+        offsetY:100
+      },
+      ease:"power4.inOut"
+    });
+  });
+});
+</script>
+</body>
+</html>
